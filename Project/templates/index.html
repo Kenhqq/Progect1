@@ -5,20 +5,30 @@
     <title>Title</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+    <style>
+        #myVideo {
+            position: fixed;
+            right: 0;
+            bottom: 0;
+            min-width: 100%;
+            min-height: 100%;
+        }
+    </style>
 </head>
 <body>
-    {% extends "base.html" %}
-    {% block content %}
+    <video autoplay muted loop id="myVideo">
+        <source src="../static/TopFilms.mp4">
+    </video>
     <div class="btn-group" role="group" aria-label="Basic example" style="position:absolute; right: -10px;">
         <button  src="..." alt="..." style="vertical-align:middle" type="button" class="btn">Темный режим</button>
         <button  src="..." alt="..." style="vertical-align:middle" type="button" class="btn">Личный кабинет</button>
     </div>
-    <center>
+    <div class="text-center position-absolute top-50 start-50 translate-middle">
         <p> <input id="search_form_input_homepage" class="js-search-input search__input--adv" type="text" autocomplete="off" name="q" tabindex="1" value="" autocapitalize="off" autocorrect="off" placeholder="Введите название или укажите URL"> </p>
         <img src="..." class="rounded-0" alt="YT">
         <img src="..." class="rounded-1" alt="VK">
         <img src="..." class="rounded-2" alt="KP">
-    </center>
+    </div>
     {% endblock %}
 </body>
 </html>
