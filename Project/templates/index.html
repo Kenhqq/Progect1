@@ -7,6 +7,8 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
 </head>
 <body>
+    {% extends "base.html" %}
+    {% block content %}
     <div class="btn-group" role="group" aria-label="Basic example" style="position:absolute; right: -10px;">
         <button  src="..." alt="..." style="vertical-align:middle" type="button" class="btn">Темный режим</button>
         <button  src="..." alt="..." style="vertical-align:middle" type="button" class="btn">Личный кабинет</button>
@@ -17,20 +19,6 @@
         <img src="..." class="rounded-1" alt="VK">
         <img src="..." class="rounded-2" alt="KP">
     </center>
-    <footer class="my-5 pt-5 text-dark text-center text-small">
-            <p class="mb-1">© Имя проекта</p>
-            <ul class="list-inline">
-              <li class="list-inline-item btn-dark rounded-pill">
-                  <a class="p-2" href="..." style="color: white">
-                      О нас
-                  </a>
-              </li>
-              <li class="list-inline-item btn-dark rounded-pill">
-                  <a class="p-2" href="..." style="color: white">
-                      Связаться с нами
-                  </a>
-              </li>
-            </ul>
-    </footer>
+    {% endblock %}
 </body>
 </html>
