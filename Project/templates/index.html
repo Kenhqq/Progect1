@@ -13,15 +13,17 @@
             min-width: 100%;
             min-height: 100%;
         }
+        body{
+            color: white;
+        }
     </style>
 </head>
 <body>
     <video autoplay muted loop id="myVideo">
         <source src="../static/TopFilms.mp4">
     </video>
-    <div class="btn-group" role="group" aria-label="Basic example" style="position:absolute; right: -10px;">
-        <button  src="..." alt="..." style="vertical-align:middle" type="button" class="btn">Темный режим</button>
-        <button  src="..." alt="..." style="vertical-align:middle" type="button" class="btn">Личный кабинет</button>
+    <div class="btn-group" role="group" aria-label="Basic example" style="position:absolute; right: -10px">
+        <a style="vertical-align:middle;color: white; margin-right: 5%" href="/lk">Личный кабинет</a>
     </div>
     <div class="text-center position-absolute top-50 start-50 translate-middle">
         <p> <input id="search_form_input_homepage" class="js-search-input search__input--adv" type="text" autocomplete="off" name="q" tabindex="1" value="" autocapitalize="off" autocorrect="off" placeholder="Введите название или укажите URL"> </p>
@@ -29,6 +31,5 @@
         <img src="..." class="rounded-1" alt="VK">
         <img src="..." class="rounded-2" alt="KP">
     </div>
-    {% endblock %}
 </body>
 </html>
