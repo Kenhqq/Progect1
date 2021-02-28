@@ -7,9 +7,9 @@ main = Blueprint('main', __name__)
 
 @main.route('/')
 def start():
-    return render_template('index.html', hasNav = False)
+    return render_template('start.html', hasNav= False)
 
 
 @main.route('/base')
 def base():
-    return render_template('base.html', hasNav = False)
+    return render_template('base.html', hasNav= False)
