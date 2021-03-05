@@ -13,8 +13,17 @@ def login():
 
 @auth.route('/login', methods=['POST'])
 def login_handler():
+    email = request.form.get('email')
+    password = request.form.get('password')
+    remember_me = request.form.get('remember_me')
+    user = User.query.filter_by(email=email).first()
 
-    return 'Здесь будет происходить обработка формы логина'
+    if not user or password != user.password:
+        user.authenticated = False
+        return redirect(url_for('auth.login'))
+
+    user.authenticated = True
+    return redirect(url_for('main.base'))
 
 
 @auth.route('/register', methods=['GET'])

@@ -44,8 +44,6 @@ def create_app():
     def load_user(user_id):
         User.query.get(int(user_id))
 
-    with app.app_context():
-        db.create_all()
 
     return app
 
