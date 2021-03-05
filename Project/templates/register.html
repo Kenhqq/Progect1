@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block content %}
+<title>Регистрация</title>
+<div class="d-flex justify-content-center">
+    <form action="/register" method="post">
+      <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label">Email</label>
+        <input name="email" type="email" class="form-control w-auto" id="exampleInputEmail1" aria-describedby="emailHelp">
+        <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+      </div>
+      <div class="mb-3">
+        <label for="exampleInputPassword3" class="form-label">Username</label>
+        <input name="username" type="text" class="form-control w-auto" id="exampleInputPassword3">
+      </div>
+      <div class="mb-3">
+        <label for="exampleInputPassword1" class="form-label">Пароль</label>
+        <input name="password" type="password" class="form-control w-auto" id="exampleInputPassword1">
+      </div>
+      <div class="mb-3">
+        <label for="exampleInputPassword2" class="form-label">Повторите пароль</label>
+        <input name="repeat_password" type="password" class="form-control w-auto" id="exampleInputPassword2">
+      </div>
+      <button type="submit" class="btn btn-primary">Регистрация</button>
+    </form>
+</div>
+{% endblock %}

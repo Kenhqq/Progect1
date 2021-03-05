@@ -5,6 +5,7 @@ from . import db
 main = Blueprint('main', __name__)
 
 
+
 @main.route('/')
 def start():
     return render_template('start.html', hasNav= False)

@@ -29,3 +29,4 @@ class User(UserMixin, db.Model):
     def is_anonymous(self):
         return False
 
+
