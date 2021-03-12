@@ -2,6 +2,7 @@ from flask import Blueprint, render_template, request, redirect, url_for, flash
 from .models import User
 from . import db
 from flask_login import login_user
+from flask_mail import Mail, Message
 
 auth = Blueprint('auth', __name__)
 
@@ -47,3 +48,17 @@ def reg_handler():
     db.session.commit()
 
     return redirect(url_for('auth.login'))
+
+@auth.route('/mail-verification')
+def mail_verification():
+    try:
+        msg = Message('Подтвердите почту',
+                      sender = '',
+                      recipients = [])
+        msg.body = 'Привет ! \n Подтвердите почту.'
+        mail.send(msg)
+        return render_template('mail-sent.html')
+    except Exception as e:
+        return(str(e))
+
+
