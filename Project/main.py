@@ -14,3 +14,7 @@ def start():
 @main.route('/base')
 def base():
     return render_template('base.html', hasNav= False)
+
+@main.route('/index')
+def index():
+    return render_template('index.html', hasNav= True)
