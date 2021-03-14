@@ -54,16 +54,4 @@ def reg_handler():
 
     return redirect(url_for('auth.login'))
 
-@auth.route('/mail-verification')
-def mail_verification():
-    try:
-        msg = Message('Подтвердите почту',
-                      sender = '',
-                      recipients = [])
-        msg.body = 'Привет ! \n Подтвердите почту.'
-        mail.send(msg)
-        return render_template('mail-sent.html')
-    except Exception as e:
-        return(str(e))
-
 

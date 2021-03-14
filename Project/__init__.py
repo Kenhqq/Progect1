@@ -2,6 +2,7 @@ from flask import Flask, render_template, request, redirect, url_for
 import os
 from flask_sqlalchemy import SQLAlchemy
 from flask_login import LoginManager
+from flask_mail import Mail
 
 basedir = os.path.abspath(os.path.dirname(__file__))
 db = SQLAlchemy()
