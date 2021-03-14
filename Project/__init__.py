@@ -5,6 +5,7 @@ from flask_login import LoginManager
 
 basedir = os.path.abspath(os.path.dirname(__file__))
 db = SQLAlchemy()
+mail = Mail()
 
 
 def create_app():
@@ -24,7 +25,7 @@ def create_app():
     )
 
     db.init_app(app)
-
+    mail.init_app(app)
 
     login_manager = LoginManager()
     login_manager.login_view = 'auth.login'

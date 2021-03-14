@@ -44,6 +44,11 @@ def reg_handler():
         flash("Пользователь с такой почтой уже существует")
         return redirect(url_for('auth.reg'))
     new_user = User(email = email, password=password, username=username)
+    msg = Message('Подтвердите почту',
+                  sender='Watch2Gether',
+                  recipients=[email])
+    msg.body = 'Привет ! \n Подтвердите почту.'
+    mail.send(msg)
     db.session.add(new_user)
     db.session.commit()
 
