@@ -32,6 +32,9 @@ def forgot_pass_post():
                       recipients = [email])
     return email
 
+@main.route('/mail-sent')
+def mail_sent():
+    return render_template('mail-sent.html', hasNav=True)
 
 @main.route('/index')
 def index():

@@ -49,9 +49,5 @@ def reg_handler():
                   recipients=[email])
     msg.body = 'Привет ! \n Подтвердите почту.'
     mail.send(msg)
-    db.session.add(new_user)
-    db.session.commit()
-
     return redirect(url_for('auth.login'))
-
 
