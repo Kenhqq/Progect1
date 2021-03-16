@@ -3,14 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
 </head>
 <body>
     {% extends "base.html" %}
-    <div class="d-flex flex-row  p-5 bd-highlight">
-        <p>Hello</p>
-        <p>Bye</p>
-        <p>Flex</p>
+    <div class="position-absolute top-50 start-50 translate-middle">
+        <img src="../static/yt-bl-48.png" class="rounded-0" alt="YT">
+        <img src="../static/vk-bl-48.png" class="rounded-1" alt="VK">
+        <img src="../static/" class="rounded-2" alt="KP">
+        <img src="../static/nf-bl-48.png" class="rounded-3" alt="NF">
     </div>
     {% endblock %}
+
+    <footer class="position-absolute bottom-0 start-50 translate-middle-x">
+            <p class="mb-1">© Имя проекта</p>
+            <ul class="list-inline">
+              <li class="list-inline-item btn-dark rounded-pill">
+                  <a class="p-2" href="..." style="color: white">
+                      О нас
+                  </a>
+              </li>
+              <li class="list-inline-item btn-dark rounded-pill">
+                  <a class="p-2" href="..." style="color: white">
+                      Связаться с нами
+                  </a>
+              </li>
+            </ul>
+    </footer>
 </body>
 </html>
