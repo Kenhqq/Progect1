@@ -27,7 +27,7 @@ def forgot_pass_post():
     email = request.form.get('email')
     user = User.query.filter_by(email=email).first()
     if user:
-        msg = Message('Забыли пароль?', 
+        msg = Message('Забыли логин или пароль?',
                       sender='Watch2Gether',
                       recipients = [email])
     return email
@@ -39,3 +39,27 @@ def mail_sent():
 @main.route('/index')
 def index():
     return render_template('index.html', hasNav= True)
+
+
+@main.route('/login', methods=['POST'])
+def login_email():
+    email = request.form.get('email')
+    user = User.query.filter_by(email=email).first()
+    if user:
+        msg = Message('Забыли логин?',
+                      sender='Watch2Gether',
+                      recipients = [email])
+    return email
+
+
+def login_pass():
+    password = request.form.get('password')
+    user = User.query.filter_by(password=password).first()
+    if user:
+        msg = Message('Забыли пароль?',
+                      sender='Watch2Gether',
+                      recipients=[email])
+    return email
+
+
+
