@@ -5,7 +5,12 @@ from flask_mail import Message
 
 main = Blueprint('main', __name__)
 
-
+# YouTube iFrame
+"""
+<iframe width="560" height="315" src="https://www.youtube.com/embed/3yJTZottyjM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+https://www.youtube.com/watch?v=3yJTZottyjM
+https://youtu.be/3yJTZottyjM
+"""
 
 @main.route('/')
 def start():
@@ -20,6 +25,18 @@ def base():
 @main.route('/forgot-password', methods=['GET'])
 def forgot_pass():
     return render_template('forgotpass.html', hasNav= True)
+
+
+@main.route('/watch', methods=['GET'])
+def watch_form():
+    return render_template('watch.html')
+
+
+@main.route('/yt_watch', methods=['POST'])
+def yt_watch():
+    link = 'https://www.youtube.com/embed/'+request.form.get('yt_link').split('/')[-1]
+    return render_template('youtube_watch.html', link= link)
+
 
 
 @main.route('/forgot-password', methods=['POST'])
